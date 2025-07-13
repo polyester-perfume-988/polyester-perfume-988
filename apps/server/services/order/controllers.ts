@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
 import { UTApi } from "uploadthing/server";
 
+import prisma from "@prisma/client";
+
 const utapi = new UTApi({ token: process.env.UPLOADTHING_TOKEN });
-const prisma = new PrismaClient();
+const prismaClient = new prisma.PrismaClient();
 
 export async function createOrder(req: Request, res: Response) {
   const file = req.file;
@@ -26,7 +27,7 @@ export async function createOrder(req: Request, res: Response) {
         errors: { file: { message: "File is not uploaded" } },
       });
 
-    const order = await prisma.order.create({
+    const order = await prismaClient.order.create({
       data: {
         name,
         address,

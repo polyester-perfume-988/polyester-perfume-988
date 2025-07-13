@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prismaClient = new prisma.PrismaClient();
 
 export async function getMaterialList(_req: Request, res: Response) {
   try {
-    const materials = await prisma.material.findMany();
+    const materials = await prismaClient.material.findMany();
 
     return res.status(200).json({ success: true, materials });
   } catch (error) {
