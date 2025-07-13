@@ -1,7 +1,5 @@
 # Polyester Perfume Example App
 
-A full-stack web application built with modern technologies for perfume e-commerce.
-
 ## Tech Stack
 
 ### Frontend
