@@ -1,44 +1,75 @@
 # Polyester Perfume Example App
 
-Package manager: pnpm
+A full-stack web application built with modern technologies for perfume e-commerce.
 
-Authentiation:Clerk
-Database: PostgreSQL using Prisma ORM
-File Storage: UploadThing
-Typescript
+## Tech Stack
 
-Frontend:
-Next.js
-Tailwind CSS
-ShadCN
-React Query
-React Hook Form
+### Frontend
+- **Framework**: Next.js with TypeScript
+- **Styling**: Tailwind CSS + ShadCN UI
+- **Data Fetching**: React Query
+- **Forms**: React Hook Form
 
-Backend:
-Express
-Prisma ORM
-PostgreSQL
+### Backend
+- **Server**: Express.js
+- **Database**: PostgreSQL
+- **ORM**: Prisma
 
-ENV variables server:
-`PORT`
-`CLERK_PUBLISHABLE_KEY`
-`CLERK_SECRET_KEY`
-`UPLOADTHING_TOKEN`
-`DATABASE_URL`
+### Services
+- **Authentication**: Clerk
+- **File Storage**: UploadThing
+- **Package Manager**: pnpm
 
-ENV variables web:
-`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-`CLERK_SECRET_KEY`
-`NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL`
-`NEXT_PUBLIC_API_BASE_URL`
+## Environment Variables
 
-Please run `pnpm install` to install dependencies. Run `pnpm run dev` to start the development server.
+### Server (`apps/server/.env`)
+```env
+PORT=
+CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+UPLOADTHING_TOKEN=
+DATABASE_URL=
+```
 
-To generate SQL migration and apply it:
-`cd apps/server && pnpm dlx prisma migrate dev --name init`
+### Web (`apps/web/.env`)
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=
+NEXT_PUBLIC_API_BASE_URL=
+```
 
-To generate the Prisma Client:
-`cd apps/server && pnpm dlx prisma generate`
+## Getting Started
 
-To open Prisma Studio:
-`cd apps/server && pnpm dlx prisma studio`
+### Installation
+```bash
+pnpm install
+```
+
+### Development
+```bash
+pnpm run dev
+```
+
+## Database Commands
+
+### Generate and Apply Migration
+```bash
+cd apps/server && pnpm dlx prisma migrate dev --name init
+```
+
+### Generate Prisma Client
+```bash
+cd apps/server && pnpm dlx prisma generate
+```
+
+### Open Prisma Studio
+```bash
+cd apps/server && pnpm dlx prisma studio
+```
+
+## Project Structure
+
+This is a monorepo containing:
+- `apps/server` - Express.js backend API
+- `apps/web` - Next.js frontend application
