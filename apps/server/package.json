@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch ./index.ts --clear-screen=false",
+    "start": "node dist/index.js",
+    "build": "tsc --build && tsc-alias",
+    "preview-db": "pnpm dlx prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/express": "^1.7.5",
+    "@prisma/client": "6.11.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "tsx": "^4.20.3",
+    "uploadthing": "^7.7.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "eslint": "^9.30.0",
+    "prisma": "^6.11.1",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.8.3"
+  }
+}

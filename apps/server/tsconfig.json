@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@services/*": ["./services/*"],
+      "@middlewares/*": ["./middlewares/*"],
+      "@utils/*": ["./utils/*"],
+      "@config/*": ["./config/*"],
+      "@root": ["./index.ts"],
+      "@prisma/client": ["./generated/prisma/index"]
+    },
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "moduleResolution": "node"
+  },
+  "include": ["./**/*.ts"],
+  "outDir": "dist"
+}
